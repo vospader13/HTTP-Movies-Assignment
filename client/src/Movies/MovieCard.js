@@ -1,12 +1,14 @@
 import React from 'react';
+import {CardShell,Title, Info} from './Styles';
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
   return (
-    <div className="movie-card">
-      <h2>{title}</h2>
+    <CardShell className="movie-card">
+      <Title>{title}</Title>
+      <Info>
       <div className="movie-director">
-        Director: <em>{director}</em>
+        Director: {director}
       </div>
       <div className="movie-metascore">
         Metascore: <strong>{metascore}</strong>
@@ -18,7 +20,8 @@ const MovieCard = props => {
           {star}
         </div>
       ))}
-    </div>
+      </Info>
+    </CardShell>
   );
 };
 
